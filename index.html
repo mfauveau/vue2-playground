@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="root">
+            <h1>Vue 2 Playground</h1>
+            <ul>
+                <li v-for="episode in episodes">
+                    <a :href="href(episode)">{{ name(episode) }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.4.2/dist/vue.js"></script>
+
+        <script>
+            var app = new Vue({
+                el: '#root',
+
+                data: {
+                    episodes: [
+                        '03-lists',
+                        '04-vue-event-listeners',
+                        '05-attribute-and-class-binding',
+                        '06-the-need-for-computed-properties',
+                        '07-components-101',
+                        '08-components-within-components',
+                        '09-pratical-components-exercise-1-message',
+                        '10-pratical-components-exercise-2-modal',
+                        '11-pratical-components-exercise-3-tabs',
+                        '12-components-communication-example-1-custom-events',
+                        '13-components-communication-example-2-event-dispatcher',
+                        '14-named-slots-in-a-nutshell',
+                        '15-single-use-components-and-inline-templates',
+                        '16-webpack-and-vue-cli',
+                        '17-hot-module-replacement',
+                        '18-vue-ajax-request-with-axios',
+                        '24-shared-state-101',
+                        '25-custom-input-components',
+                        '26-vue-spa-essentials-routing',
+                        '27-spas-and-the-backend',
+                        '28-vue-filters'
+                    ]
+                },
+
+                methods: {
+                    href(episode) {
+                        return episode + '/index.html';
+                    },
+
+                    name(episode) {
+                        return episode.replace(/-/g, ' ').replace('/index.html', ' ');
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
